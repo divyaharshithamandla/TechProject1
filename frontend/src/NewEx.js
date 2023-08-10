@@ -1,7 +1,7 @@
 import React from 'react';
 function Test(){
     return (
-        "dhgvfhdv"
+       <h1> "dhgvfhdv"</h1>
 
     );
 }
