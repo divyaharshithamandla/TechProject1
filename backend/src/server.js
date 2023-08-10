@@ -19,10 +19,9 @@ app.get('/output/:name/:email',async(req,res)=>
     const details=await db.collection("Divya").findOne({Name:req.params.name})
     res.json(details);
 })
-app.get('/output/:name/:email',async(req,res)=>
+app.get('/input/:name/:email',async(req,res)=>
 {
-    const details=await db.collection("Divya").updateOne({Gmail:req.params.email})
-    $Set()
+    const details=await db.collection("Divya").updateOne({Gmail:req.params.email,$Set:{Name:req.params.name,CName:req.params.cname}})
     res.json(details);
 })
 app.get('/all',async(req,res)=>

@@ -15,8 +15,7 @@ export const Input=()=>
         {
              if(res.data)
              {
-                setdis(res.data.Name)
-                setgmail(res.data.Gmail)
+                alert("found");
              }
              else{
                 alert("not found");
@@ -32,7 +31,7 @@ export const Input=()=>
             const res=await axios.get("http://localhost:8000/output/"+name+"/"+email)
             {
                 
-                if(res.data)
+                if(res.data.email)
                 {
                     nav('/RoadMat');
                 }
@@ -47,6 +46,9 @@ export const Input=()=>
             console.log(e)
         }
     }
+    const Forgot=()=>{
+        nav('/forgot');
+    }
     useEffect(()=>{
         axios.get("http://localhost:8000/all")
         .then((result)=>
@@ -60,7 +62,7 @@ export const Input=()=>
         <label>Gmail<input type="gmail" onChange={(e)=>setgmail(e.target.value)}/></label>
         
         <button onClick={Submit}>Submit</button><br/>
-        <button onclick={nav('/forgot')}>Forget password</button><br/>
+        <button onClick={Forgot}>Forget password</button><br/>
         <button onClick={Show}>Show</button>{dis}<br/>{email}<br/>
         <div>
             {

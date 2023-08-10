@@ -11,7 +11,7 @@ import HospitalMatter from './HospitalMat.js';
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import { Input } from './collections/input.js';
 import { Registrationdb } from './collections/Registrationdb.js';
-
+import {Frgt} from './collections/frgt.js';
 function App() {
   
   return (
@@ -19,13 +19,13 @@ function App() {
     
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<UseImages/>}/>
+      <Route path="/i" element={<UseImages/>}/>
       <Route path="/renew" element={<RoadMatter/>}/>
       <Route path="/new" element={<HospitalMatter/>}/>
-      <Route path="/input" element={<Input/>}/>
+      <Route path="/" element={<Input/>}/>
       <Route path="/Registrationdb" element={<Registrationdb/>}/>
       <Route path="/RoadMat" element={<UseImages/>}/>
-      
+      <Route path="/forgot" element={<Frgt/>}/>
     </Routes>
   </BrowserRouter>
     {/*<BrowserRouter>
