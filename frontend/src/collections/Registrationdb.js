@@ -11,13 +11,20 @@ export const Registrationdb=()=>
     const [mail,setmail]=useState([]);
     const [age,setage]=useState([]);
     const [auto,setauto]=useState([]);
+    const [password,setpassword]=useState([]);
 
     
     const Submit=async()=>
     {
+        var input1Value = document.getElementById('psd1').value;
+        var input2Value = document.getElementById('psd2').value;
+        if (input1Value === input2Value) {
+
+
         try
         {
-            const res=await axios.post("http://localhost:8000/input/"+name+"/"+email+"/"+age)
+            
+            const res=await axios.post("http://localhost:8000/input/"+email+"/"+password+"/"+age)
             {
                 if(res.data)
                 {
@@ -34,6 +41,11 @@ export const Registrationdb=()=>
             console.log(e)
         }
     }
+    else {
+        alert("invalid")
+    }
+   
+    }
     useEffect(()=>{
         axios.get("http://localhost:8000/all")
         .then((result)=>
@@ -41,29 +53,21 @@ export const Registrationdb=()=>
                 setauto(result.data);
             })
     })
+    
+    
     return (
-        <><center>
-        <label/>Name<input type="text" onChange={(e)=>setname(e.target.value)}></input><br/>
+        <>
+        <form action="/submit" method="post"/>
+        <center>
+        <label/>Password<input type="password" id="psd1" onChange={(e)=>setpassword(e.target.value)}></input><br/>
+        <label/>reenter password<input type="password" id="psd2"></input>
+        
         <label>Gmail<input type="gmail" onChange={(e)=>setgmail(e.target.value)}/></label>
         <br/>
-        <label/>Age<input type="text" onChange={(e)=>setage(e.target.value)}></input><br/>
+        <label/>Age<input type="number" onChange={(e)=>setage(e.target.value)}></input><br/>
         
         <button onClick={Submit}>Submit</button><br/></center>
-        <div>
-            {
-                auto.map((keer)=>
-                (
-                    <>
-                    
-                    {auto.Name}
-                    {auto.Gmail}
-                    {auto.Age}
-
-                    
-                     </>
-                ))
-            }
-        </div>
+       
         
         </>
     )

@@ -8,10 +8,11 @@ export const Input=()=>
     const [email,setgmail]=useState([]);
     const [mail,setmail]=useState([]);
     const [auto,setauto]=useState([]);
+    const [password,setpassword]=useState([]);
 
     const Show=async()=>{
      
-        const res=await axios.get("http://localhost:8000/output/"+name)
+        const res=await axios.get("http://localhost:8000/output/"+email)
         {
              if(res.data)
              {
@@ -28,10 +29,10 @@ export const Input=()=>
     {
         try
         {
-            const res=await axios.get("http://localhost:8000/output/"+name+"/"+email)
+            const res=await axios.get("http://localhost:8000/output/"+email+"/"+password)
             {
                 
-                if(res.data.email)
+                if(res.data)
                 {
                     nav('/RoadMat');
                 }
@@ -58,26 +59,13 @@ export const Input=()=>
     })
     return (
         <>
-        <input type="text" onChange={(e)=>setname(e.target.value)}></input>
+        <input type="password" onChange={(e)=>setpassword(e.target.value)}></input>
         <label>Gmail<input type="gmail" onChange={(e)=>setgmail(e.target.value)}/></label>
         
         <button onClick={Submit}>Submit</button><br/>
         <button onClick={Forgot}>Forget password</button><br/>
         <button onClick={Show}>Show</button>{dis}<br/>{email}<br/>
-        <div>
-            {
-                auto.map((keer)=>
-                (
-                    <>
-                    
-                    {auto.Name}
-                    {auto.Gmail}
-
-                    
-                     </>
-                ))
-            }
-        </div>
+        
         
         </>
     )

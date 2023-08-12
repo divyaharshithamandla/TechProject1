@@ -8,26 +8,32 @@ app.use(cors());
 app.get('/',(req,res)=>{
     res.send("server is running")
 })
-app.post('/input/:name/:email/:age',async(req,res)=>
+app.post('/input/:email/:password/:age',async(req,res)=>
 {
-    const details=await db.collection('Divya').insertOne({Name:req.params.name,Gmail:req.params.email,Age:req.params.age})
+    const details=await db.collection('Divya').insertOne({Gmail:req.params.email,Password:req.params.password,Age:req.params.age})
     res.json(details);
 })
 
-app.get('/output/:name/:email',async(req,res)=>
+app.get('/output/:email/:password',async(req,res)=>
 {
-    const details=await db.collection("Divya").findOne({Name:req.params.name})
+    const details=await db.collection("Divya").findOne({Gmail:req.params.email})
     res.json(details);
 })
-app.get('/input/:name/:email',async(req,res)=>
-{
-    const details=await db.collection("Divya").updateOne({Gmail:req.params.email,$Set:{Name:req.params.name,CName:req.params.cname}})
+
+app.post('/update/:email/:newpassword',async (req,res)=>{
+  
+    const details = await db.collection('Divya').findOneAndUpdate({Gmail:req.params.email},{$set:{Password:req.params.newpassword}})
     res.json(details);
 })
 app.get('/all',async(req,res)=>
 {
     const result=await db.collection("Divya").find().toArray();
     res.json(result);
+})
+app.get('/output/:email',async(req,res)=>
+{
+    const details=await db.collection("Divya").findOne({Gmail:req.params.email})
+    res.json(details);
 })
 
 
