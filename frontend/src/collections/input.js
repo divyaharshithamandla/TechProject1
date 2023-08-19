@@ -34,7 +34,7 @@ export const Input=()=>
     {
         try
         {
-            const res=await axios.get("http://localhost:8000/output/"+email+"/"+password)
+            const res=await axios.get("https://app-services.onrender.com/output/"+email+"/"+password)
             {
                 if(res.data)
                 {
@@ -42,7 +42,7 @@ export const Input=()=>
                 }
                 else
                 {
-                    const res=await axios.get("http://localhost:8000/admin/"+email)
+                    const res=await axios.get("https://app-services.onrender.com/admin/"+email)
                     {
                         if(res.data)
                         {
@@ -67,13 +67,13 @@ export const Input=()=>
     const Nav=()=>{
         nav('/');
     }
-    useEffect(()=>{
-        axios.get("http://localhost:8000/all")
-        .then((result)=>
-            {
-                setauto(result.data);
-            })
-    })
+    // useEffect(()=>{
+    //     axios.get("http://localhost:8000/all")
+    //     .then((result)=>
+    //         {
+    //             setauto(result.data);
+    //         })
+    // })
     return (
         <> <div align="center">
         <button onClick={Nav} id="Align">home</button>
