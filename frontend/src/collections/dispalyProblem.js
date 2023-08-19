@@ -21,7 +21,7 @@ export const Problem=()=>{
                // alert(res.data.Text)
                 //document.write(res.data.Text);
                 setText(res.data.Text);
-                text.setText(res.data.Text)
+                //text.setText(res.data.Text)
                 
             }
             else{
