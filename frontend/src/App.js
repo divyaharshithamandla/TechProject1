@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 // import './App.css';
 
+
 import Test from'./NewEx.js';
 import Divya from "./divya";
 import Div3 from './Exnew.js';
@@ -12,6 +13,10 @@ import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import { Input } from './collections/input.js';
 import { Registrationdb } from './collections/Registrationdb.js';
 import {Frgt} from './collections/frgt.js';
+import { Retreival } from './collections/textretreival.js';
+import { AdminInsert } from './collections/adminRep.js';
+import { Problem } from './collections/dispalyProblem.js';
+import { Home } from './collections/homepage.js';
 function App() {
   
   return (
@@ -19,13 +24,16 @@ function App() {
     
     <BrowserRouter>
     <Routes>
-      <Route path="/i" element={<UseImages/>}/>
+    <Route path="/in" element={<Retreival/>}/>
+      <Route path="/input" element={<Input/>}/>
       <Route path="/renew" element={<RoadMatter/>}/>
       <Route path="/new" element={<HospitalMatter/>}/>
-      <Route path="/" element={<Input/>}/>
+      <Route path="/" element={<Home/>}/>
       <Route path="/Registrationdb" element={<Registrationdb/>}/>
       <Route path="/RoadMat" element={<UseImages/>}/>
       <Route path="/forgot" element={<Frgt/>}/>
+      <Route path="/admin" element={<AdminInsert/>}/>
+      <Route path="/show" element={<Problem/>}/>
     </Routes>
   </BrowserRouter>
     {/*<BrowserRouter>

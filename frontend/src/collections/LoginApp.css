@@ -1,0 +1,42 @@
+Image{
+    height:150px;
+    width:100%;
+}
+button{
+    color: skyblue;
+    padding: 5px 15px;
+    text-align:center;
+    border: 2px solid #4CAF50;
+}
+  
+button:hover {
+    background-color:lavender;
+    color: white;
+}
+body {
+    background-image: Url("C:\Users\Divya\Desktop\Divya\TechProject1\frontend\public\favicon2.ico");
+    width:"50%";
+    height:"50%";
+}
+table{
+    
+    border: 1px solid white; 
+    text-align:"center";
+}
+input{
+    padding: 5px 20px;
+}
+td{
+    padding: 10px 10px;
+ }
+table.center {
+    border: 1px solid black;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 100px;
+    background-color: lavender;
+}
+#Align{
+      margin-left: 90%;
+    }

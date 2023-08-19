@@ -8,15 +8,40 @@ app.use(cors());
 app.get('/',(req,res)=>{
     res.send("server is running")
 })
-app.post('/input/:email/:password/:age',async(req,res)=>
+app.post('/input/:email/:password',async(req,res)=>
 {
-    const details=await db.collection('Divya').insertOne({Gmail:req.params.email,Password:req.params.password,Age:req.params.age})
+    const details=await db.collection('Divya').insertOne({Gmail:req.params.email,Password:req.params.password})
+    res.json(details);
+})
+app.post('/insert/:name/:text',async(req,res)=>
+{
+    const details=await db.collection('Admin').insertOne({Name:req.params.name,Text:req.params.text})
+    res.json(details);
+})
+app.get('/show/:name',async(req,res)=>
+{
+    const details=await db.collection("Admin").findOne({Name:req.params.name})
+    res.json(details);
+})
+app.get('/admin/:name',async(req,res)=>
+{
+    const details=await db.collection("Admin").findOne({Gmail:req.params.name})
     res.json(details);
 })
 
+app.post('/updateAdmin/:name/:text',async (req,res)=>{
+  
+    const details = await db.collection('Admin').findOneAndUpdate({Name:req.params.name},{$set:{Text:req.params.text}})
+    res.json(details);
+})
 app.get('/output/:email/:password',async(req,res)=>
 {
-    const details=await db.collection("Divya").findOne({Gmail:req.params.email})
+    const details=await db.collection("Divya").findOne({Gmail:req.params.email,Password:req.params.password})
+    res.json(details);
+})
+app.get('/output/:email',async(req,res)=>
+{
+    const details=await db.collection("Divya").findOne({Gmail:req.params.email,Password:req.params.password})
     res.json(details);
 })
 
@@ -25,6 +50,12 @@ app.post('/update/:email/:newpassword',async (req,res)=>{
     const details = await db.collection('Divya').findOneAndUpdate({Gmail:req.params.email},{$set:{Password:req.params.newpassword}})
     res.json(details);
 })
+app.post('/updateText/:email/:text',async (req,res)=>{
+  
+    const details = await db.collection('Divya').findOneAndUpdate({Gmail:req.params.email},{$set:{Text:req.params.text}})
+    res.json(details);
+})
+
 app.get('/all',async(req,res)=>
 {
     const result=await db.collection("Divya").find().toArray();

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import { BrowserRouter,Route,Routes,Link} from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
+//import './LoginApp.css';
+import './../App.css';
 export const Registrationdb=()=>
 { 
     const nav=useNavigate();
@@ -28,7 +30,7 @@ export const Registrationdb=()=>
             {
                 if(res.data)
                 {
-                    nav('/RoadMat');
+                    nav('/show');
                 }
                 else
                 {
@@ -53,22 +55,26 @@ export const Registrationdb=()=>
                 setauto(result.data);
             })
     })
-    
+    const Nav=()=>{
+        nav('/');
+    }
     
     return (
-        <>
-        <form action="/submit" method="post"/>
+        <><body/>
+        <div class-Name="Image" align="center">
+            <button onClick={Nav} id="Align">home</button>
+       <table border="2" class="center">
         <center>
-        <label/>Password<input type="password" id="psd1" onChange={(e)=>setpassword(e.target.value)}></input><br/>
-        <label/>reenter password<input type="password" id="psd2"></input>
-        
-        <label>Gmail<input type="gmail" onChange={(e)=>setgmail(e.target.value)}/></label>
+        <tr><td><label/>Gmail</td><td><input type="gmail" onChange={(e)=>setgmail(e.target.value)}/></td></tr>
         <br/>
-        <label/>Age<input type="number" onChange={(e)=>setage(e.target.value)}></input><br/>
-        
-        <button onClick={Submit}>Submit</button><br/></center>
-       
-        
+        <tr><td><label/>Password</td><td><input type="password" id="psd1" onChange={(e)=>setpassword(e.target.value)}></input></td></tr><br/>
+        <tr><td><label/>reenter password</td><td><input type="password" id="psd2"></input></td></tr><br/>
+        <td><button onClick={Submit}>Submit</button><br/></td>
+        already have an account:
+        <Link to="/input">login</Link>
+        </center>
+       </table>
+       </div>
         </>
     )
 }

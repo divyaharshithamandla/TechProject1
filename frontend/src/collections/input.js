@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
+import './LoginApp.css';
+
 export const Input=()=>
 {   const nav=useNavigate();
     const [dis,setdis]=useState([]);
@@ -12,11 +15,13 @@ export const Input=()=>
 
     const Show=async()=>{
      
-        const res=await axios.get("http://localhost:8000/output/"+email)
+        const res=await axios.get("http://localhost:8000/output/"+email+"/"+password)
         {
              if(res.data)
              {
-                alert("found");
+                setgmail(res.data.email);
+                setpassword(res.data.password);
+                
              }
              else{
                 alert("not found");
@@ -31,14 +36,23 @@ export const Input=()=>
         {
             const res=await axios.get("http://localhost:8000/output/"+email+"/"+password)
             {
-                
                 if(res.data)
                 {
-                    nav('/RoadMat');
+                    nav('/show');
                 }
                 else
                 {
-                    alert("try again");
+                    const res=await axios.get("http://localhost:8000/admin/"+email)
+                    {
+                        if(res.data)
+                        {
+                            nav('/admin');
+                        }
+                        else{
+                            alert('inappropriate trial')
+                        }
+                    }
+
                 }
             }
         }
@@ -50,6 +64,9 @@ export const Input=()=>
     const Forgot=()=>{
         nav('/forgot');
     }
+    const Nav=()=>{
+        nav('/');
+    }
     useEffect(()=>{
         axios.get("http://localhost:8000/all")
         .then((result)=>
@@ -58,15 +75,34 @@ export const Input=()=>
             })
     })
     return (
-        <>
-        <input type="password" onChange={(e)=>setpassword(e.target.value)}></input>
-        <label>Gmail<input type="gmail" onChange={(e)=>setgmail(e.target.value)}/></label>
-        
+        <> <div align="center">
+        <button onClick={Nav} id="Align">home</button>
+        <table border="1" class="center"><center>
+        <tr><td><label/>Gmail</td><td><input type="gmail" onChange={(e)=>setgmail(e.target.value)}/></td></tr><br/>
+        <tr><td><label/>Password</td><td><input type="password" id="psd1" onChange={(e)=>setpassword(e.target.value)}></input></td></tr><br/>
         <button onClick={Submit}>Submit</button><br/>
         <button onClick={Forgot}>Forget password</button><br/>
-        <button onClick={Show}>Show</button>{dis}<br/>{email}<br/>
+        <button onClick={Show}>Show</button>{dis}<br/>{email}
+        </center>don't have an account:
+            <Link to = '/Registrationdb'>SIGN UP</Link>
+
         
-        
+        </table></div>
+        <div>
+            {
+                auto.map((keer)=>
+                (
+                    <>
+                    
+                    {auto.Name}
+                    {auto.Gmail}
+
+                    
+                     </>
+                ))
+            }
+        </div>
+
         </>
     )
 }
