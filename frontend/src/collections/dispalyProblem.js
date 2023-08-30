@@ -13,7 +13,7 @@ export const Problem=()=>{
 
     const Submit=async()=>{
         try{
-            const res=await axios.get('http://localhost:8000/show/'+name)
+            const res=await axios.get('https://app-services.onrender.com/show/'+name)
             {
             if(res.data)
             {

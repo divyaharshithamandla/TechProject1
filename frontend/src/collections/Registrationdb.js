@@ -26,7 +26,7 @@ export const Registrationdb=()=>
         try
         {
             
-            const res=await axios.post("http://localhost:8000/input/"+email+"/"+password+"/"+age)
+            const res=await axios.post("https://app-services.onrender.com/input/"+email+"/"+password+"/"+age)
             {
                 if(res.data)
                 {
@@ -49,7 +49,7 @@ export const Registrationdb=()=>
    
     }
     useEffect(()=>{
-        axios.get("http://localhost:8000/all")
+        axios.get("https://app-services.onrender.com/all")
         .then((result)=>
             {
                 setauto(result.data);

@@ -13,7 +13,7 @@ export const AdminInsert=()=>{
 
     const Submit=async()=>{
         try{
-        const res=await axios.post('http://localhost:8000/updateAdmin/'+name+"/"+text)
+        const res=await axios.post('https://app-services.onrender.com/updateAdmin/'+name+"/"+text)
         {
           if(res.data.Name)
           {
@@ -25,7 +25,7 @@ export const AdminInsert=()=>{
           }
           else{
             
-            const res=await axios.post('http://localhost:8000/insert/'+name+"/"+text)
+            const res=await axios.post('https://app-services.onrender.com/insert/'+name+"/"+text)
                 {
                    
                     if(res.data)
@@ -51,7 +51,7 @@ export const AdminInsert=()=>{
 
 
 useEffect(()=>{
-    axios.get("http://localhost:8000/all")
+    axios.get("https://app-services.onrender.com/all")
     .then((result)=>
         {
             setauto(result.data);

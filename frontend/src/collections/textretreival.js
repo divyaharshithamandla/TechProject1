@@ -12,7 +12,7 @@ export const Retreival=()=>{
     const [text,setText]=useState([]);
     const Submit=async()=>{
         try{
-        const res=await axios.post('http://localhost:8000/updatetext/'+email+"/"+text)
+        const res=await axios.post('https://app-services.onrender.com/updatetext/'+email+"/"+text)
         {
           if(res.data)
           {
@@ -30,7 +30,7 @@ export const Retreival=()=>{
 
 
 useEffect(()=>{
-    axios.get("http://localhost:8000/all")
+    axios.get("https://app-services.onrender.com/all")
     .then((result)=>
         {
             setauto(result.data);

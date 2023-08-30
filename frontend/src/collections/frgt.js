@@ -8,7 +8,7 @@ export const Frgt=()=>{
     const [email,setgmail]=useState([]);
     const [password,setpassword]=useState([]);
     const Submit=async()=>{
-        const res=await axios.post("http://localhost:8000/update/"+email+"/"+password)
+        const res=await axios.post("https://app-services.onrender.com/update/"+email+"/"+password)
         {
           if(res.data)
           {
