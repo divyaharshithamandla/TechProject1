@@ -20,7 +20,7 @@ app.post('/insert/:name/:text',async(req,res)=>
 })
 app.get('/show/:name',async(req,res)=>
 {
-    const details=await db.collection("Admin").findOne({Name:req.params.name})
+    const details=await db.collection("Divya").findOne({Name:req.params.name})
     res.json(details);
 })
 app.get('/admin/:name',async(req,res)=>

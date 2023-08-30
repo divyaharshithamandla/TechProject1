@@ -34,7 +34,7 @@ export const Input=()=>
     {
         try
         {
-            const res=await axios.get("https://app-services.onrender.com/output/"+email+"/"+password)
+            const res=await axios.get("http://localhost:8000/output/"+email+"/"+password)
             {
                 if(res.data)
                 {
@@ -42,7 +42,7 @@ export const Input=()=>
                 }
                 else
                 {
-                    const res=await axios.get("https://app-services.onrender.com/admin/"+email)
+                    const res=await axios.get("http://localhost:8000/admin/"+email)
                     {
                         if(res.data)
                         {

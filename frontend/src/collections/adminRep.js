@@ -19,7 +19,7 @@ export const AdminInsert=()=>{
           {
 
               alert('saved')
-              //setdis(res.data.email);
+              //setdis(res.data.email); 
               //setdis(res.data.password);
               
           }
