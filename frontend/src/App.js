@@ -17,7 +17,7 @@ import { Retreival } from './collections/textretreival.js';
 import { AdminInsert } from './collections/adminRep.js';
 import { Problem } from './collections/dispalyProblem.js';
 import { Home } from './collections/homepage.js';
-import SearchBar2 from './rohini.js';
+//import SearchBar2 from './rohini.js';
 function App() {
   
   return (
@@ -35,7 +35,7 @@ function App() {
       <Route path="/forgot" element={<Frgt/>}/>
       <Route path="/admin" element={<AdminInsert/>}/>
       <Route path="/show" element={<Problem/>}/>
-      <Route path="/search" element={<SearchBar2/>}/>
+      {/* <Route path="/search" element={<SearchBar2/>}/> */}
     </Routes>
   </BrowserRouter>
     {/*<BrowserRouter>
