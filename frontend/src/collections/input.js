@@ -80,9 +80,9 @@ export const Input=()=>
         <table border="1" class="center"><center>
         <tr><td><label/>Gmail</td><td><input type="gmail" onChange={(e)=>setgmail(e.target.value)}/></td></tr><br/>
         <tr><td><label/>Password</td><td><input type="password" id="psd1" onChange={(e)=>setpassword(e.target.value)}></input></td></tr><br/>
-        <button onClick={Submit}>Submit</button><br/>
-        <button onClick={Forgot}>Forget password</button><br/>
-        <button onClick={Show}>Show</button>{dis}<br/>{email}
+        <button onClick={Submit}>Submit</button>
+        <button onClick={Forgot}>Forget password</button>
+        <button onClick={Show}>Show</button><br/>
         </center>don't have an account:
             <Link to = '/Registrationdb'>SIGN UP</Link>
 
