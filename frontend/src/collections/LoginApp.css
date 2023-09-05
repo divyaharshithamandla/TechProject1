@@ -14,7 +14,8 @@ button:hover {
     color: white;
 }
 body {
-    background-image: Url("C:\Users\Divya\Desktop\Divya\TechProject1\frontend\public\favicon2.jpg"); 
+    /* background-image: Url("C:\Users\Divya\Desktop\Divya\TechProject1\frontend\public\favicon2.jpg");  */
+    background-color: aquamarine;
     width:"50%";
     height:"50%";
 }
