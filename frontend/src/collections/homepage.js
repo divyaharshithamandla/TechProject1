@@ -15,9 +15,9 @@ const reg=()=>{
 }
 
     return(
-        <div align="center">
-            <center><button onClick={input} laign="center">Login</button></center><br/><br/>
-            <button onClick={reg}>Sign up</button>
+        <div id="Center">
+            <center><button onClick={input} >Login</button></center><br/><br/>
+            <center><button onClick={reg}>Sign up</button></center>
         </div>
        
     )

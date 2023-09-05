@@ -40,7 +40,7 @@ const Nav=()=>{
         <div align="center"> <button onClick={Nav} id="Align">logout</button>
        <table border="1" class="center"><center>
             <input name="name" type="text" placeholder="enter name" onChange={(e)=>setName(e.target.value)}></input><br/>
-            <textarea rows="4" cols="50" id="text" name="text" placeholder="problem"n onChange={(e)=>setText(e.target.value)}></textarea><br/>
+            {/* <textarea rows="4" cols="50" id="text" name="text" placeholder="problem"n onChange={(e)=>setText(e.target.value)}></textarea><br/> */}
             <button onClick={Submit}>Retreive</button><br/></center>
             </table>{text}
        </div>

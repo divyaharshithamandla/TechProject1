@@ -15,7 +15,7 @@ button:hover {
 }
 body {
     /* background-image: Url("C:\Users\Divya\Desktop\Divya\TechProject1\frontend\public\favicon2.jpg");  */
-    background-color:lavenderblush;
+    background-color:cadetblue;
     width:"50%";
     height:"50%";
 }
@@ -40,5 +40,11 @@ table.center {
 }
 #Align{
       margin-left: 90%;
+    }
+#Center{
+     margin-top: 100px;
+     margin-bottom: 100px;
+     margin-right: 150px;
+     margin-left: 100px;
     }
     /* @media (width) */
