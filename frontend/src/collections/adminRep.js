@@ -66,7 +66,7 @@ const Nav=()=>{
        <table border="1" class="center">
        <center> <input name="name" type="text" placeholder="gmail" onChange={(e)=>setName(e.target.value)}></input><br/></center>
        <center> <textarea rows="4" cols="50" id="text" name="text" placeholder="problem"n onChange={(e)=>setText(e.target.value)}></textarea><br/></center>
-       <center>  <button onClick={Submit}>Retreive</button></center>
+       <center>  <button onClick={Submit}>Submit</button></center>
             </table>
        </div>
     )
