@@ -82,7 +82,7 @@ export const Input=()=>
         <tr><td><label/>Password</td><td><input type="password" id="psd1" onChange={(e)=>setpassword(e.target.value)}></input></td></tr><br/>
         <button onClick={Submit}>Submit</button>
         <button onClick={Forgot}>Forget password</button>
-        <button onClick={Show}>Show</button><br/>{dis}
+        <button onClick={Show}>Show</button><br/>{email}
         </center>don't have an account:
             <Link to = '/Registrationdb'>SIGN UP</Link>
 
